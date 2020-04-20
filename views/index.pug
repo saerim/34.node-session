@@ -1,0 +1,9 @@
+extends layout/default.pug
+block css
+	link(rel="stylesheet", href="/css/index.css")
+block content
+	h1 인덱스
+	if user
+		p= user.username
+block js
+	script(src="/js/index.js")

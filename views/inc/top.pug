@@ -1,0 +1,26 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+	a.navbar-brand(href="/") Node.js 리뷰
+	button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+		span.navbar-toggler-icon
+	#navbarSupportedContent.collapse.navbar-collapse
+		ul.navbar-nav.mr-auto
+			if name == "index"
+				li.nav-item.active
+					a.nav-link(href="/") Home
+			else
+				li.nav-item
+					a.nav-link(href="/") Home
+			if name == "board"
+				li.nav-item.active
+					a.nav-link(href="/board") Board
+			else
+				li.nav-item
+					a.nav-link(href="/board") Board
+		div.my-2.d-flex.align-items-center
+			if user
+				div.mr-3.text-white= user.username
+				button.btn.btn-sm.btn-outline-warning.my-2.my-sm-0(onclick=`location.href="/user/signout"`) Sign out
+			else
+				.nav-item
+					a.nav-link.text-success(data-toggle="modal" data-target="#loginModal" style="cursor: pointer;") Sign in
+				button.btn.btn-sm.btn-outline-success.my-2.my-sm-0(onclick=`location.href="/user/signup"`) Sign up
